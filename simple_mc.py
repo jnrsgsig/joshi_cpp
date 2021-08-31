@@ -8,7 +8,7 @@ def simple_monte_carlo(the_payoff: Payoff, expiry: float, spot: float, vol: floa
     root_variance = np.sqrt(variance)
     ito_correction = - 0.5 * variance
     moved_spot = spot * np.exp(r * expiry + ito_correction)
-    this_gaussian= standard_normal(number_of_paths)
+    this_gaussian = standard_normal(number_of_paths)
     this_spot = moved_spot * np.exp(root_variance * this_gaussian)
     mean_payoff = the_payoff(this_spot).mean()
     mean_payoff *= np.exp(- r * expiry)
@@ -18,6 +18,7 @@ def simple_monte_carlo(the_payoff: Payoff, expiry: float, spot: float, vol: floa
 if __name__ == '__main__':
     from payoff import PayoffCall
     from payoff import PayoffPut
+
     expiry = 1
     strike = 1
     spot = 1

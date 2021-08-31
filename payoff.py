@@ -11,7 +11,7 @@ class Payoff(ABC):
 
 
 class PayoffCall(Payoff):
-    def __init__(self, strike_):
+    def __init__(self, strike_: float):
         self.strike = strike_
 
     def __call__(self, spot_: Union[float,]):
@@ -19,7 +19,7 @@ class PayoffCall(Payoff):
 
 
 class PayoffPut(Payoff):
-    def __init__(self, strike_):
+    def __init__(self, strike_: float):
         self.strike = strike_
 
     def __call__(self, spot_: Union[float,]):

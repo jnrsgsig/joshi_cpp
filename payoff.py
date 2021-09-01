@@ -26,21 +26,5 @@ class PayoffPut(Payoff):
         return np.clip(self._strike - spot_, a_min=0, a_max=None)
 
 
-class PayoffDigitalCall(Payoff):
-    def __init__(self, strike_: float):
-        self._strike = strike_
-
-    def __call__(self, spot_: Union[float, np.ndarray]):
-        return int(spot_ > self._strike)
-
-
-class PayoffDigitalPut(Payoff):
-    def __init__(self, strike_: float):
-        self._strike = strike_
-
-    def __call__(self, spot_: Union[float, np.ndarray]):
-        return int(spot_ <= self._strike)
-
-
 if __name__ == '__main__':
     pass

@@ -13,15 +13,4 @@ class PayoffDoubleDigital(Payoff):
 
 
 if __name__ == '__main__':
-    from simple_mc import simple_monte_carlo
-
-    expiry = 1
-    lower_level = 0.5
-    upper_level = 1.5
-    spot = 1
-    vol = 1
-    r = 1
-    number_of_paths = 10 ** 6
-    result_double_digital = simple_monte_carlo(
-        PayoffDoubleDigital(lower_level, upper_level), expiry, spot, vol, r, number_of_paths)
-    print(result_double_digital)
+    pass

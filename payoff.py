@@ -43,8 +43,4 @@ class PayoffDigitalPut(Payoff):
 
 
 if __name__ == '__main__':
-    for payoff in [
-        PayoffDigitalCall, PayoffDigitalPut, PayoffCall, PayoffPut
-    ]:
-        payoff = payoff(1)
-        print(payoff(0), payoff(3))
+    pass

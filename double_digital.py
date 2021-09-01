@@ -11,6 +11,9 @@ class PayoffDoubleDigital(Payoff):
     def __call__(self, spot_: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
         return (spot_ > self.lower_level) & (spot_ < self.upper_level)
 
+    def __copy__(self):
+        return self.__class__(self.lower_level, self.upper_level)
+
 
 if __name__ == '__main__':
     pass

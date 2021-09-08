@@ -5,8 +5,14 @@ import numpy as np
 
 
 class Payoff(ABC):
+    def __init__(self):
+        pass
+
     @abstractmethod
     def __call__(self, spot_: Union[float,]):
+        pass
+
+    def __del__(self):
         pass
 
     @abstractmethod
@@ -16,6 +22,7 @@ class Payoff(ABC):
 
 class PayoffCall(Payoff):
     def __init__(self, strike_: float):
+        super().__init__()
         self._strike = strike_
 
     def __call__(self, spot_: Union[float, np.ndarray]):
@@ -27,6 +34,7 @@ class PayoffCall(Payoff):
 
 class PayoffPut(Payoff):
     def __init__(self, strike_: float):
+        super().__init__()
         self._strike = strike_
 
     def __call__(self, spot_: Union[float, np.ndarray]):

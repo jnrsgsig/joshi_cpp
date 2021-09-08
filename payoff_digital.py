@@ -1,9 +1,11 @@
+import numpy as np
 from typing import Union
 from payoff import Payoff
 
 
 class PayoffDigitalCall(Payoff):
     def __init__(self, strike_: float):
+        super().__init__()
         self._strike = strike_
 
     def __call__(self, spot_: Union[float, np.ndarray]):
@@ -15,6 +17,7 @@ class PayoffDigitalCall(Payoff):
 
 class PayoffDigitalPut(Payoff):
     def __init__(self, strike_: float):
+        super().__init__()
         self._strike = strike_
 
     def __call__(self, spot_: Union[float, np.ndarray]):

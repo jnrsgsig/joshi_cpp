@@ -5,14 +5,15 @@ from payoff import Payoff
 
 class PayoffDoubleDigital(Payoff):
     def __init__(self, lower_level_: float, upper_level_: float):
-        self.lower_level = lower_level_
-        self.upper_level = upper_level_
+        super().__init__()
+        self._lower_level = lower_level_
+        self._upper_level = upper_level_
 
     def __call__(self, spot_: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
-        return (spot_ > self.lower_level) & (spot_ < self.upper_level)
+        return (spot_ > self._lower_level) & (spot_ < self._upper_level)
 
     def __copy__(self):
-        return self.__class__(self.lower_level, self.upper_level)
+        return self.__class__(self._lower_level, self._upper_level)
 
 
 if __name__ == '__main__':
